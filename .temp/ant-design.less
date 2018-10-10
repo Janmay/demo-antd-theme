@@ -1,0 +1,182 @@
+@import "../node_modules/antd/lib/style/themes/default.less";
+
+
+.antd-pro-components-global-footer-index.module-globalFooter {
+    padding: 0 16px;
+    margin: 48px 0 24px;
+    text-align: center;
+
+    .antd-pro-components-global-footer-index.module-links {
+        margin-bottom: 8px;
+
+        a {
+            color: @text-color-secondary;
+            transition: all 0.3s;
+
+            &:not(:last-child) {
+                margin-right: 40px;
+            }
+
+            &:hover {
+                color: @text-color;
+            }
+        }
+    }
+
+    .antd-pro-components-global-footer-index.module-copyright {
+        color: @text-color-secondary;
+        font-size: @font-size-base;
+    }
+}
+
+
+@pro-header-hover-bg: rgba(0, 0, 0, 0.025);
+
+.antd-pro-components-global-header-index.module-header {
+  height: 64px;
+  padding: 0 12px 0 0;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+  position: relative;
+}
+
+.antd-pro-components-global-header-index.module-logo {
+  height: 64px;
+  line-height: 58px;
+  vertical-align: top;
+  display: inline-block;
+  padding: 0 0 0 24px;
+  cursor: pointer;
+  font-size: 20px;
+  img {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.antd-pro-components-global-header-index.module-menu {
+  .anticon {
+    margin-right: 8px;
+  }
+  .ant-dropdown-menu-item {
+    width: 160px;
+  }
+}
+
+i.antd-pro-components-global-header-index.module-trigger {
+  font-size: 20px;
+  height: 64px;
+  cursor: pointer;
+  transition: all 0.3s, padding 0s;
+  padding: 22px 24px;
+  &:hover {
+    background: @pro-header-hover-bg;
+  }
+}
+
+.antd-pro-components-global-header-index.module-right {
+  float: right;
+  height: 100%;
+  overflow: hidden;
+  .antd-pro-components-global-header-index.module-action {
+    cursor: pointer;
+    padding: 0 12px;
+    display: inline-block;
+    transition: all 0.3s;
+    height: 100%;
+    > i {
+      vertical-align: middle;
+      color: @text-color;
+    }
+    &:hover {
+      background: @pro-header-hover-bg;
+    }
+    &.ant-popover-open {
+      background: @pro-header-hover-bg;
+    }
+  }
+  .antd-pro-components-global-header-index.module-search {
+    padding: 0 12px;
+    &:hover {
+      background: transparent;
+    }
+  }
+  .antd-pro-components-global-header-index.module-account {
+    .antd-pro-components-global-header-index.module-avatar {
+      margin: 20px 8px 20px 0;
+      color: @primary-color;
+      background: rgba(255, 255, 255, 0.85);
+      vertical-align: middle;
+    }
+  }
+}
+
+.antd-pro-components-global-header-index.module-dark {
+  height: 64px;
+  .antd-pro-components-global-header-index.module-action {
+    color: rgba(255, 255, 255, 0.85);
+    > i {
+      color: rgba(255, 255, 255, 0.85);
+    }
+    .ant-popover-open {
+      background: @primary-color;
+    }
+    .ant-badge {
+      color: rgba(255, 255, 255, 0.85);
+    }
+  }
+}
+
+@media only screen and (max-width: @screen-md) {
+  .antd-pro-components-global-header-index.module-header {
+    .ant-divider-vertical {
+      vertical-align: unset;
+    }
+    .antd-pro-components-global-header-index.module-name {
+      display: none;
+    }
+    i.antd-pro-components-global-header-index.module-trigger {
+      padding: 22px 12px;
+    }
+    .antd-pro-components-global-header-index.module-logo {
+      padding-left: 12px;
+      padding-right: 12px;
+      position: relative;
+    }
+    .antd-pro-components-global-header-index.module-right {
+      position: absolute;
+      right: 12px;
+      top: 0;
+      background: #fff;
+      .antd-pro-components-global-header-index.module-account {
+        .antd-pro-components-global-header-index.module-avatar {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+
+.antd-pro-components-select-theme-index.module-colorBlock {
+    width: 38px;
+    height: 22px;
+    margin: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 12px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.antd-pro-components-select-theme-index.module-dropDown {
+    cursor: pointer;
+}
+.antd-pro-layouts-header.module-fixedHeader {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 9;
+    transition: width 0.2s;
+}

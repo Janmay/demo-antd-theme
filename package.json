@@ -1,0 +1,38 @@
+{
+  "name": "demo-antd-theme",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "antd": "^3.9.2",
+    "babel-plugin-import": "^1.8.0",
+    "classnames": "^2.2.6",
+    "lodash": "^4.17.11",
+    "lodash-decorators": "^6.0.0",
+    "rc-animate": "^2.5.4",
+    "react": "^16.5.0",
+    "react-document-title": "^2.0.3",
+    "react-dom": "^16.5.0",
+    "react-redux": "^5.0.7",
+    "react-router-config": "^1.0.0-beta.4",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.5",
+    "redux": "^4.0.0",
+    "redux-actions": "^2.6.1"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "antd-pro-merge-less": "^0.0.9",
+    "antd-theme-webpack-plugin": "^1.1.8",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
+    "less-loader": "^4.1.0",
+    "react-app-rewire-less-with-modules": "^0.0.4",
+    "react-app-rewired": "^1.6.2",
+    "react-container-query": "^0.11.0",
+    "react-loadable": "^5.5.0"
+  }
+}
