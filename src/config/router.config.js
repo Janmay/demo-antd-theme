@@ -4,12 +4,21 @@ const routes = [
     {
         path: '/',
         component: () => import('@/layouts/BasicLayout'),
-        // routes: [
-        //     {
-        //         path: '/dashboard',
-        //         component: ''
-        //     }
-        // ]
+        routes: [
+            {
+                name: '仪表盘',
+                icon: 'dashboard',
+                path: '/dashboard',
+                component: null,
+                routes: [
+                    {
+                        name: '分析页',
+                        path: '/dashboard/analysis',
+                        component: () => import('@/pages/Dashboard/Analysis'),
+                    }
+                ]
+            }
+        ]
     }
 ];
 

@@ -3,7 +3,7 @@ import zhCN from 'antd/lib/locale-provider/zh_CN';
 import { LocaleProvider } from 'antd';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import { renderRoutes } from 'react-router-config';
+import renderRoutes from './utils/renderRoutes';
 import routes from './config/router.config';
 import './App.css';
 

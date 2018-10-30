@@ -4,10 +4,36 @@ import { Layout } from 'antd';
 import DocumentTitle from 'react-document-title';
 import { ContainerQuery } from 'react-container-query';
 import classNames from 'classnames';
+import memoizeOne from 'memoize-one';
+import isEqual from 'lodash/isEqual';
 import Header from './Header';
 import Footer from './Footer';
+import SiderMenu from '@/components/SiderMenu';
 
 const { Content } = Layout;
+
+// Convert router to menu.
+function formatter(data) {
+    return data.map(item => {
+        if (item.path) {
+            const result = {
+                ...item,
+                locale: item.name || ''
+            };
+            if (item.routes) {
+                const children = formatter(item.routes);
+                result.children = children;
+            }
+            delete result.routes;
+            return result;
+        }
+
+        return null;
+    })
+    .filter(item => item);
+}
+
+const memoizeOneFormatter = memoizeOne(formatter, isEqual);
 
 const query = {
     'screen-xs': {
@@ -35,6 +61,17 @@ const query = {
   };
 
 class BasicLayout extends React.PureComponent {
+    state = {
+        menuData: this.getMenuData()
+    };
+
+    getMenuData() {
+        const {
+            route: { routes }
+        } = this.props;
+        return memoizeOneFormatter(routes);
+    }
+
     handleMenuCollapse = collapsed => {
         const { dispatch } = this.props;
         dispatch({
@@ -46,10 +83,18 @@ class BasicLayout extends React.PureComponent {
     render() {
         const {
             children,
-            location: { pathname }
+            location: { pathname },
+            navTheme
         } = this.props;
+        const { menuData } = this.state;
         const layout = (
             <Layout>
+                <SiderMenu
+                    theme={navTheme}
+                    onCollapse={this.handleMenuCollapse}
+                    menuData={menuData}
+                    {...this.props}
+                />
                 <Layout style={{
                     minHeight: '100vh'
                 }}>

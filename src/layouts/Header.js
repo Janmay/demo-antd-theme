@@ -9,20 +9,22 @@ const { Header } = Layout;
 
 class HeaderView extends PureComponent {
 
-    getHeaderWidth = () => {
-        const { collapsed } = this.props;
-        return collapsed ? 'calc(100% - 80px)' : 'calc(100% - 256px)';
-    };
+    // getHeaderWidth = () => {
+    //     const { collapsed } = this.props;
+    //     return collapsed ? 'calc(100% - 80px)' : 'calc(100% - 256px)';
+    // };
 
     render() {
         const { handleMenuCollapse, setting } = this.props;
         const { navTheme } = setting;
-        const width = this.getHeaderWidth();
+        const width = '100%';
+        // const width = this.getHeaderWidth();
         return (
             <Animate component='' transitionName='fade'>
                 <Header style={{ padding: 0, width }} className={styles.fixHeader}>
                     <GlobalHeader
                         onCollapse={handleMenuCollapse}
+                        {...this.props}
                     />
                 </Header>
             </Animate>
